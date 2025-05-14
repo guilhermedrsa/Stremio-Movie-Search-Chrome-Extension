@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stremio Movie Search Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            max-width: 500px;
+        }
+        .option-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+        }
+        button {
+            background-color: #4285f4;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #3367d6;
+        }
+        #status {
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Stremio Movie Search Options</h1>
+    
+    <div class="option-group">
+        <label>
+            <input type="checkbox" id="useStremioApp">
+            Use Stremio App (uncheck for web)
+        </label>
+    </div>
+
+    <div class="option-group">
+        <label>
+            TMDB API Key:
+            <input type="text" id="tmdbApiKey" placeholder="815573e1bc6e1f4a5395783d8203c351">
+        </label>
+        <p>A TMDB API key improves title matching for non-English content.</p>
+        <p>Get a free key at: <a href="https://www.themoviedb.org/settings/api" target="_blank">themoviedb.org/settings/api</a></p>
+    </div>
+
+    <button id="save">Save</button>
+    <div id="status"></div>
+
+    <script src="options.js"></script>
+</body>
+</html>

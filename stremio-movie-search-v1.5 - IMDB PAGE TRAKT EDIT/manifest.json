@@ -1,0 +1,59 @@
+{
+  "manifest_version": 3,
+  "name": "Stremio Movie Search (custom version)",
+  "version": "1.5.2",
+  "description": "Stremio search button next to IMDb, Trakt and AdoroCinema links. edit by @guilhermedrsa - original version 1.5 by @erolcan",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.omdbapi.com/*",
+    "https://*.imdb.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://www.google.com/search*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "*://www.imdb.com/title/*",
+        "*://www.imdb.com/*/title/*",
+        "*://m.imdb.com/title/*",
+        "*://m.imdb.com/*/title/*"
+      ],
+      "js": ["imdb.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "*://www.adorocinema.com/filmes/*",
+        "*://www.adorocinema.com/series/*"
+      ],
+      "js": ["adorocinema.js"],
+      "run_at": "document_end"
+    },
+    {
+      "matches": ["*://*.trakt.tv/*"],
+      "js": ["trakt.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "96": "icons/stremio.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/stremio.png"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "options_page": "options.html",
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self';"
+  }
+}
