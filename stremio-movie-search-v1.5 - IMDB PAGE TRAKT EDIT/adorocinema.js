@@ -1,9 +1,11 @@
 // adorocinema.js - Enhanced version with TMDB prioritized over OMDb and no translation
 
-let TMDB_API_KEY = null;
+// Chave padrão da TMDB
+let TMDB_API_KEY = "815573e1bc6e1f4a5395783d8203c351";
 
+// Se o usuário configurar uma chave, ela terá prioridade
 chrome.storage.local.get("tmdbApiKey", (result) => {
-    TMDB_API_KEY = result.tmdbApiKey || null;
+  if (result.tmdbApiKey) TMDB_API_KEY = result.tmdbApiKey;
 });
 
 const OMDB_API_KEY = "64541305";
