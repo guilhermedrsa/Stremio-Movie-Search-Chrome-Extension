@@ -209,14 +209,13 @@ function addStremioButton() {
   button.className = 'stremio-button-rt';
   button.style = `
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 48px;
-    height: 48px;
+    top: 2.4%;
+    left: 8.1%;
+    width: 28px;
+    height: 28px;
     cursor: pointer;
     z-index: 9999;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     transition: transform 0.2s;
   `;
   
